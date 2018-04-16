@@ -3,9 +3,9 @@ variable "vpc_id" {
   description = "ID of the VPC in which the endpoint will be used"
 }
 
-variable "subnet_ids" {
+variable "available_subnet_ids" {
   type        = "list"
-  description = "IDs of the subnets in which to create the endpoint network interfaces"
+  description = "IDs of the available subnets in which to create the endpoint network interfaces"
 }
 
 variable "security_group_ids" {

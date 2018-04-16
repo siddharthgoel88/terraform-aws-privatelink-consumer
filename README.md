@@ -10,11 +10,16 @@ Usage
 module "service-consumer-privatelink" {
   source                = "github.com/traveloka/terraform-aws-privatelink-consumer?ref=master"
   vpc_id                = "vpc-abcd0123"
-  subnet_ids            = ["subnet-0a1b2c34", "subnet-0a1b2d45"]
+  available_subnet_ids  = ["subnet-0a1b2c34", "subnet-0a1b2d45"]
   security_group_ids    = ["sg-01a23b45"]
   service_provider_name = "com.amazonaws.vpce.ap-southeast-1.vpce-svc-01abc2de3fa4b5cd6"
 }
 ```
+
+Subnet IDs Selection
+--------------------
+
+Subnets used by interface endpoint must be on the same Availability Zone with the endpoint service. You just need to provide list of available subnets at most one subnet for each Availability Zone. This module will filter provided `available_subnet_ids` which are in the same Availability Zone with the endpoint service and use them.
 
 Authors
 -------
