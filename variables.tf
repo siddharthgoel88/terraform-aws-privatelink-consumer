@@ -17,3 +17,24 @@ variable "service_provider_name" {
   type        = "string"
   description = "Service name of the PrivateLink service provider"
 }
+
+variable "service_name" {
+  type        = "string"
+  description = "Stack name of the PrivateLink"
+}
+
+variable "description" {
+  type        = "string"
+  default     = ""
+  description = "Description of the PrivateLink service stack"
+}
+
+variable "environment" {
+  type        = "string"
+  description = "Will be used in resources' Environment tag"
+}
+
+variable "product_domain" {
+  type        = "string"
+  description = "Abbreviation of the product domain the created resources belong to"
+}
