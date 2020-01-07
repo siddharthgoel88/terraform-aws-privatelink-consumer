@@ -6,6 +6,10 @@ provider "aws" {
 # Local values declaration. Change the value with a valid value before you used this example
 #############################################################################################
 locals {
+  product_domain = "tsi"
+  service_name   = "tsi-service"
+  enviroment     = "testing"
+
   vpc_id                = "vpc-abcd0123"
   available_subnet_ids  = ["subnet-0a1b2c34", "subnet-0a1b2d45"]
   security_group_ids    = ["sg-01a23b45"]
@@ -18,8 +22,12 @@ locals {
 module "service-consumer" {
   source = "../../"
 
-  vpc_id                = "${var.vpc_id}"
-  available_subnet_ids  = ["${var.available_subnet_ids}"]
-  security_group_ids    = ["${var.security_group_ids}"]
-  service_provider_name = "${var.service_provider_name}"
+  product_domain = "${local.product_domain}"
+  service_name   = "${local.service_name}"
+  environment    = "${local.enviroment}"
+
+  vpc_id                = "${local.vpc_id}"
+  available_subnet_ids  = ["${local.available_subnet_ids}"]
+  security_group_ids    = ["${local.security_group_ids}"]
+  service_provider_name = "${local.service_provider_name}"
 }
