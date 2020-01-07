@@ -7,7 +7,7 @@ provider "aws" {
 #############################################################################################
 locals {
   product_domain = "tsi"
-  service_name   = "tsi-service"
+  service_name   = "beicalc"
   environment     = "testing"
 
   vpc_id                = "vpc-abcd0123"
