@@ -6,10 +6,10 @@ resource "aws_vpc_endpoint" "service_consumer" {
   vpc_endpoint_type  = "Interface"
 
   tags = {
-    Name             = "${var.service_name}-vpce"
-    Description      = "${var.description}"
-    Environment      = "${var.environment}"
-    ProductDomain    = "${var.product_domain}"
-    ManagedBy        = "terraform"
+    Name          = "${var.service_name}-vpce"
+    Description   = "${var.description}"
+    Environment   = "${var.environment}"
+    ProductDomain = "${var.product_domain}"
+    ManagedBy     = "terraform"
   }
 }
