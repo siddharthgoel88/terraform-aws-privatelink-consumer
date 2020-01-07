@@ -8,7 +8,7 @@ provider "aws" {
 locals {
   product_domain = "tsi"
   service_name   = "tsi-service"
-  enviroment     = "testing"
+  environment     = "testing"
 
   vpc_id                = "vpc-abcd0123"
   available_subnet_ids  = ["subnet-0a1b2c34", "subnet-0a1b2d45"]
