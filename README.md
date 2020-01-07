@@ -11,7 +11,7 @@ module "service-consumer-privatelink" {
   source                = "github.com/traveloka/terraform-aws-privatelink-consumer?ref=master"
 
   product_domain = "tsi"
-  service_name   = "tsi-service"
+  service_name   = "beicalc"
   environment    = "testing"
 
   vpc_id                = "vpc-abcd0123"
